@@ -1,5 +1,5 @@
 {
-  "parent": "swaggg:block/tutorialBlock",
+  "parent": "swaggg:block/swagBlock",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

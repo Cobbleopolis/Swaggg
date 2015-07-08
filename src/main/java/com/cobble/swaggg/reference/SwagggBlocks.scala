@@ -27,7 +27,7 @@ object SwagggBlocks {
 
 
     def registerBlockItemRender(block: SwagggBlock, meta: Int = 0): Unit = {
-        Minecraft.getMinecraft.getRenderItem.getItemModelMesher.register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(Reference.MOD_ID + ":" + block.getName, "inventory"))
+        Minecraft.getMinecraft.getRenderItem.getItemModelMesher.register(Item.getItemFromBlock(block.asInstanceOf[Block]), meta, new ModelResourceLocation(Reference.RESOURCE_PREFIX + block.getName, "inventory"))
     }
     
 }

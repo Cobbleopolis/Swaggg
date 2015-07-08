@@ -2,7 +2,7 @@ package com.cobble.swaggg
 
 import com.cobble.swaggg.block.BlockSwaggg
 import com.cobble.swaggg.proxy.CommonProxy
-import com.cobble.swaggg.reference.{SwagggBlocks, Reference}
+import com.cobble.swaggg.reference.{SwagggFluids, SwagggBlocks, Reference}
 import net.minecraft.block.Block
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.entity.RenderItem
@@ -26,6 +26,7 @@ object Swaggg {
 
     @EventHandler
     def preInit(e: FMLPreInitializationEvent): Unit = {
+        SwagggFluids.registerFluids()
         SwagggBlocks.preInit()
     }
 

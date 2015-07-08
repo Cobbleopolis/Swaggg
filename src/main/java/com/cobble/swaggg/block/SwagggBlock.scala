@@ -3,9 +3,9 @@ package com.cobble.swaggg.block
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
 
-class SwagggBlock(material: Material) extends Block(material){
+trait SwagggBlock {
 
-    var name: String = ""
+    val name: String
 
     def getName: String = name
 }
