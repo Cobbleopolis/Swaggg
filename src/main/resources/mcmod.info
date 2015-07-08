@@ -1,0 +1,16 @@
+[
+{
+  "modid": "swaggg",
+  "name": "Swaggg",
+  "description": "Nothing but pure swag",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Cobbbleopolis"],
+  "credits": "The Forge and FML guys, for making this example and unknownloner for helping me with the idea.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
