@@ -1,6 +1,6 @@
 package com.cobble.swaggg.reference
 
-import com.cobble.swaggg.block.{BlockTest, SwagggBlock}
+import com.cobble.swaggg.block.{BlockSwaggg, SwagggBlock}
 import net.minecraft.block.Block
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.entity.RenderItem
@@ -13,23 +13,21 @@ object SwagggBlocks {
 
     private
     
-    var test: SwagggBlock = null
+    var swaggg: SwagggBlock = null
 
     def preInit(): Unit = {
-        test = new BlockTest
+        swaggg = new BlockSwaggg
     }
 
     def init(event: FMLInitializationEvent): Unit = {
         if(event.getSide == Side.CLIENT){
-            val renderItem = Minecraft.getMinecraft.getRenderItem
-            registerBlockItemRender(renderItem, test)
+            registerBlockItemRender(swaggg)
         }
     }
 
 
-    def registerBlockItemRender(renderItem: RenderItem, block: SwagggBlock, meta: Int = 0): Unit = {
-
-        renderItem.getItemModelMesher.register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(Reference.MOD_ID + ":" + block.getName, "inventory"));
+    def registerBlockItemRender(block: SwagggBlock, meta: Int = 0): Unit = {
+        Minecraft.getMinecraft.getRenderItem.getItemModelMesher.register(Item.getItemFromBlock(block.asInstanceOf[Block]), meta, new ModelResourceLocation(Reference.RESOURCE_PREFIX + block.getName, "inventory"))
     }
     
 }
