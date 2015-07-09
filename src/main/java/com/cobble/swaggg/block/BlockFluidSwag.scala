@@ -1,14 +1,14 @@
 package com.cobble.swaggg.block
 
-import com.cobble.swaggg.reference.{BlockNames, Reference}
-import net.minecraft.block.Block
+import com.cobble.swaggg.reference.{BlockNames, Reference, SwagggFluids}
 import net.minecraft.block.material.Material
 import net.minecraft.creativetab.CreativeTabs
+import net.minecraftforge.fluids.BlockFluidClassic
 import net.minecraftforge.fml.common.registry.GameRegistry
 
-class BlockSwaggg extends Block(Material.rock) with SwagggBlock{
+class BlockFluidSwag extends BlockFluidClassic(SwagggFluids.fluidSwaggg, Material.water) with SwagggBlock {
 
-    val name: String = BlockNames.SWAGGG
+    val name: String = BlockNames.FLUID_SWAGGG
 
     setUnlocalizedName(Reference.RESOURCE_PREFIX + name)
     setCreativeTab(CreativeTabs.tabBlock)

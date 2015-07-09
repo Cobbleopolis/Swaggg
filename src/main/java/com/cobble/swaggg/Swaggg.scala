@@ -28,6 +28,7 @@ object Swaggg {
     def preInit(e: FMLPreInitializationEvent): Unit = {
         SwagggFluids.registerFluids()
         SwagggBlocks.preInit()
+        proxy.registerRenderers()
     }
 
     @EventHandler

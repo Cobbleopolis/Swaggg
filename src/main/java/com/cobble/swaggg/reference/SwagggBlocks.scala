@@ -1,6 +1,6 @@
 package com.cobble.swaggg.reference
 
-import com.cobble.swaggg.block.{BlockSwaggg, SwagggBlock}
+import com.cobble.swaggg.block.{BlockFluidSwag, BlockSwaggg, SwagggBlock}
 import net.minecraft.block.Block
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.entity.RenderItem
@@ -14,14 +14,18 @@ object SwagggBlocks {
     private
     
     var swaggg: SwagggBlock = null
+    var fluidSwaggg: SwagggBlock = null
 
     def preInit(): Unit = {
         swaggg = new BlockSwaggg
+        fluidSwaggg = new BlockFluidSwag
+        SwagggFluids.fluidSwaggg.setBlock(SwagggBlocks.fluidSwaggg.asInstanceOf[Block])
     }
 
     def init(event: FMLInitializationEvent): Unit = {
         if(event.getSide == Side.CLIENT){
             registerBlockItemRender(swaggg)
+//            registerBlockItemRender(fluidSwaggg)
         }
     }
 

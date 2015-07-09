@@ -1,15 +1,18 @@
 package com.cobble.swaggg.reference
 
-import net.minecraft.block.BlockLiquid
+import com.cobble.swaggg.fluid.FluidSwaggg
 import net.minecraft.util.ResourceLocation
-import net.minecraftforge.fluids.{FluidRegistry, Fluid}
+import net.minecraftforge.fluids.{Fluid, FluidRegistry}
 
 object SwagggFluids {
 
-    val fluidSwaggg: Fluid = new Fluid(Reference.RESOURCE_PREFIX + "swag", new ResourceLocation(Reference.RESOURCE_PREFIX + "sawgBlock"), new ResourceLocation(Reference.MOD_ID + ":" + "sawgBlock"))
+    val fluidSwaggg: Fluid = new FluidSwaggg
+
 
     def registerFluids(): Unit = {
+        println("Registering Fluids")
         FluidRegistry.registerFluid(fluidSwaggg)
+        println(FluidRegistry.getFluid(fluidSwaggg.getName).getName)
     }
 
 }

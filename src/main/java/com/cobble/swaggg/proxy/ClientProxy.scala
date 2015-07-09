@@ -3,10 +3,18 @@ package com.cobble.swaggg.proxy
 
 import java.io.File
 
+import com.cobble.swaggg.reference.{BlockNames, Reference, SwagggFluids, SwagggBlocks}
+import net.minecraft.block.Block
+import net.minecraft.block.state.IBlockState
+import net.minecraft.client.renderer.ItemMeshDefinition
+import net.minecraft.client.renderer.block.statemap.StateMapperBase
+import net.minecraft.client.resources.model.{ModelResourceLocation, ModelBakery}
 import net.minecraft.entity.Entity
 import net.minecraft.entity.player.EntityPlayer
+import net.minecraft.item.{ItemStack, Item}
 import net.minecraft.network.Packet
 import net.minecraft.world.World
+import net.minecraftforge.client.model.ModelLoader
 import net.minecraftforge.fml.common.network.IGuiHandler
 
 
@@ -15,6 +23,21 @@ class ClientProxy extends CommonProxy with ISwagggProxy {
 
     override def registerRenderers() {
 
+        val fluidSwagggModelLoc = new ModelResourceLocation(Reference.RESOURCE_PREFIX + BlockNames.FLUID_SWAGGG, "fluid")
+
+        val fluidSwaggg: Item = Item.getItemFromBlock(SwagggBlocks.fluidSwaggg.asInstanceOf[Block])
+
+        ModelBakery.addVariantName(fluidSwaggg)
+        ModelLoader.setCustomMeshDefinition(fluidSwaggg, new ItemMeshDefinition() {
+            def getModelLocation(stack: ItemStack): ModelResourceLocation = {
+                fluidSwagggModelLoc
+            }
+        })
+        ModelLoader.setCustomStateMapper(SwagggBlocks.fluidSwaggg.asInstanceOf[Block], new StateMapperBase() {
+            protected def getModelResourceLocation(state: IBlockState): ModelResourceLocation = {
+                fluidSwagggModelLoc
+            }
+        })
     }
 
     override def registerSound(): Unit = {
