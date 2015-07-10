@@ -25,7 +25,7 @@ class ClientProxy extends CommonProxy with ISwagggProxy {
 
         val fluidSwagggModelLoc = new ModelResourceLocation(Reference.RESOURCE_PREFIX + BlockNames.FLUID_SWAGGG, "fluid")
 
-        val fluidSwaggg: Item = Item.getItemFromBlock(SwagggBlocks.fluidSwaggg.asInstanceOf[Block])
+        val fluidSwaggg: Item = Item.getItemFromBlock(SwagggBlocks.fluidSwag.asInstanceOf[Block])
 
         ModelBakery.addVariantName(fluidSwaggg)
         ModelLoader.setCustomMeshDefinition(fluidSwaggg, new ItemMeshDefinition() {
@@ -33,7 +33,7 @@ class ClientProxy extends CommonProxy with ISwagggProxy {
                 fluidSwagggModelLoc
             }
         })
-        ModelLoader.setCustomStateMapper(SwagggBlocks.fluidSwaggg.asInstanceOf[Block], new StateMapperBase() {
+        ModelLoader.setCustomStateMapper(SwagggBlocks.fluidSwag.asInstanceOf[Block], new StateMapperBase() {
             protected def getModelResourceLocation(state: IBlockState): ModelResourceLocation = {
                 fluidSwagggModelLoc
             }

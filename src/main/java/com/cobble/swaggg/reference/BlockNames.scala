@@ -2,8 +2,10 @@ package com.cobble.swaggg.reference
 
 object BlockNames {
 
-    val SWAGGG = "swagBlock"
+    val SWAG = "swagBlock"
 
-    val FLUID_SWAGGG = "fluidSwaggg"
+    val FLUID_SWAGGG = "fluidSwag"
+
+    val SWAG_EXTRACTER = "swagExtracter"
     
 }

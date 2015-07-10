@@ -5,11 +5,11 @@ import net.minecraft.util.ResourceLocation
 import net.minecraftforge.fluids.Fluid
 import net.minecraftforge.fml.client.registry.ClientRegistry
 
-class FluidSwaggg extends Fluid(BlockNames.FLUID_SWAGGG,
-    new ResourceLocation("swaggg:blocks/fluidSwagggStill"),
-    new ResourceLocation("swaggg:blocks/fluidSwagggFlow")) {
+class FluidSwag extends Fluid(BlockNames.FLUID_SWAGGG,
+    new ResourceLocation("swaggg:blocks/fluidSwagStill"),
+    new ResourceLocation("swaggg:blocks/fluidSwagFlow")) {
 
-    setLuminosity(8)
+    setLuminosity(14)
 
     override def getColor: Int = {
         0xFFFFFFFF
