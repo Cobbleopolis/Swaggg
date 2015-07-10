@@ -17,8 +17,4 @@ class BlockFluidSwag extends BlockFluidClassic(SwagggFluids.fluidSwaggg, Materia
     lightValue = 14
     GameRegistry.registerBlock(this, name)
 
-    override def canFlowInto(world: IBlockAccess, pos: BlockPos): Boolean = {
-        false
-    }
-
 }
