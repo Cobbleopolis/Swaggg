@@ -6,6 +6,6 @@ object BlockNames {
 
     val FLUID_SWAGGG = "fluidSwag"
 
-    val SWAG_EXTRACTER = "swagExtracter"
+    val SWAG_EXTRACTOR = "swagExtractor"
     
 }
